@@ -12,6 +12,9 @@ const NavBar = () => {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
+      <li>
+        <NavLink to="/login">Home</NavLink>
+      </li>
     </>
   );
   return (
@@ -60,7 +63,7 @@ const NavBar = () => {
               />
             </div>
           </div>
-          <Link>
+          <Link to="/login">
             <button className="btn">Login</button>
           </Link>
         </div>
