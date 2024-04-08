@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "agricultural land"
+  },
+  {
+    "id": 2,
+    "name": "ranches"
+  },
+  {
+    "id": 3,
+    "name": "farms"
+  },
+  {
+    "id": 4,
+    "name": "vineyards"
+  },
+  {
+    "id": 5,
+    "name": "forests"
+  },
+  {
+    "id": 6,
+    "name": "plantations"
+  }
+]
