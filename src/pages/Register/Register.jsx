@@ -26,8 +26,6 @@ const Register = () => {
   };
   return (
     <div>
-      <NavBar></NavBar>
-
       <div className="text-center">
         <div className="w-1/2 mx-auto p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
           <h1 className="text-2xl font-bold text-center">Register</h1>

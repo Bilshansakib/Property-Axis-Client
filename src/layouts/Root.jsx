@@ -1,9 +1,19 @@
 import { Outlet } from "react-router-dom";
+import NavBar from "../components/NavBar/NavBar";
+import Footer from "../components/Footer/Footer";
 
 const Root = () => {
   return (
-    <div className="max-w-6xl mx-auto font-kanit">
-      <Outlet></Outlet>
+    <div className=" mx-auto max-w-9xl font-kanit">
+      <div className="mx-auto h-16">
+        <NavBar></NavBar>
+      </div>
+      <div className="container mx-auto">
+        <Outlet></Outlet>
+      </div>
+      <div className="container mx-auto">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };
