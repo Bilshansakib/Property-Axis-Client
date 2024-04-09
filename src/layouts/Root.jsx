@@ -8,7 +8,7 @@ const Root = () => {
       <div className="mx-auto h-16">
         <NavBar></NavBar>
       </div>
-      <div className="container mx-auto">
+      <div className="container lg:px-8 mx-auto">
         <Outlet></Outlet>
       </div>
       <div className="container mx-auto">
