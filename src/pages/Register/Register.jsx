@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 
-const Login = () => {
-  const handleLogin = (e) => {
+const Register = () => {
+  const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
   };
@@ -12,13 +12,39 @@ const Login = () => {
 
       <div className="text-center">
         <div className="w-1/2 mx-auto p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
-          <h1 className="text-2xl font-bold text-center">Login</h1>
+          <h1 className="text-2xl font-bold text-center">Register</h1>
           <form
-            onSubmit={handleLogin}
+            onSubmit={handleRegister}
             noValidate=""
             action=""
             className="space-y-6"
           >
+            <div className="space-y-1 text-sm">
+              <label htmlFor="username" className="block dark:text-gray-600">
+                Username
+              </label>
+              <input
+                type="text"
+                name="username"
+                required
+                id="username"
+                placeholder="Username"
+                className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+              />
+            </div>
+            <div className="space-y-1 text-sm">
+              <label htmlFor="PhotoURL" className="block dark:text-gray-600">
+                Photo URL
+              </label>
+              <input
+                type="text"
+                name="username"
+                required
+                id="PhotoURL"
+                placeholder="Photo URL"
+                className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+              />
+            </div>
             <div className="space-y-1 text-sm">
               <label htmlFor="username" className="block text-gray-600">
                 Email
@@ -29,7 +55,7 @@ const Login = () => {
                 required
                 id="email"
                 placeholder="email"
-                className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600"
+                className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:border-violet-600"
               />
             </div>
             <div className="space-y-1 text-sm">
@@ -42,7 +68,7 @@ const Login = () => {
                 required
                 id="password"
                 placeholder="Password"
-                className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:dark:border-violet-600"
+                className="w-full px-4 py-3 rounded-md  dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
               <div className="flex justify-end text-xs text-gray-600">
                 <a rel="noopener noreferrer" href="#">
@@ -91,14 +117,14 @@ const Login = () => {
             </button>
           </div>
           <p className="text-xs  text-center sm:px-6 dark:text-gray-600">
-            Don't have an account?
-            <Link to="/register">
+            Already have an account?
+            <Link to="/login">
               <a
                 rel="noopener noreferrer"
                 href="#"
                 className="underline font-semibold ml-1 text-red-400 dark:text-gray-800"
               >
-                Register/Sign up
+                Login
               </a>
             </Link>
           </p>
@@ -108,4 +134,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
