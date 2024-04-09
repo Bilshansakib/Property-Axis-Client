@@ -119,7 +119,7 @@ const EstateCard = ({ estate }) => {
               </h1>
             </a>
           </div>
-          {/* <div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
+          <div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
             <div className="mb-8 space-x-5 border-b-2 border-opacity-10 dark:border-violet-600">
               <button
                 type="button"
@@ -240,7 +240,7 @@ const EstateCard = ({ estate }) => {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       </section>
     </div>
