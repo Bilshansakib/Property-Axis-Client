@@ -1,10 +1,28 @@
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
+import { useContext } from "react";
+import { AuthOfContext } from "../../Providers/AuthContext";
 
 const Register = () => {
+  const { createUser } = useContext(AuthOfContext);
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
+
+    const name = form.get("username");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(name, photo, email, password);
+
+    // user
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div>
@@ -38,7 +56,7 @@ const Register = () => {
               </label>
               <input
                 type="text"
-                name="username"
+                name="photo"
                 required
                 id="PhotoURL"
                 placeholder="Photo URL"
