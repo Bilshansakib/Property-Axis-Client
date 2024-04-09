@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 const EstateCard = ({ estate }) => {
   const {
+    id,
     estate_title,
     segment_name,
     description,
     price,
     Status,
-    Area,
+    area,
     location,
     facilities,
   } = estate;
@@ -20,7 +22,7 @@ const EstateCard = ({ estate }) => {
                 <h3 className="flex items-center space-x-2 dark:text-gray-600">
                   <span className="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-600"></span>
                   <span className="text-xs font-bold tracking-wider uppercase">
-                    Exclusive
+                    {segment_name}
                   </span>
                 </h3>
                 <a
@@ -28,24 +30,21 @@ const EstateCard = ({ estate }) => {
                   href="#"
                   className="font-serif hover:underline"
                 >
-                  Donec sed elit quis odio mollis dignissim eget et nulla.
+                  {description}
                 </a>
-                <p className="text-xs dark:text-gray-600">
-                  47 minutes ago by
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="hover:underline dark:text-violet-600"
-                  >
-                    Leroy Jenkins
-                  </a>
-                </p>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  className="hover:underline dark:text-violet-600"
+                >
+                  Owned by saaqib
+                </a>
               </div>
               <div className="flex flex-col space-y-2">
                 <h3 className="flex items-center space-x-2 dark:text-gray-600">
                   <span className="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-600"></span>
                   <span className="text-xs font-bold tracking-wider uppercase">
-                    Exclusive
+                    Facilities
                   </span>
                 </h3>
                 <a
@@ -53,24 +52,16 @@ const EstateCard = ({ estate }) => {
                   href="#"
                   className="font-serif hover:underline"
                 >
-                  Ut fermentum nunc quis ipsum laoreet condimentum.
+                  <li>{facilities[0]}</li>
+                  <li>{facilities[1]}</li>
+                  <li>{facilities[2]}</li>
                 </a>
-                <p className="text-xs dark:text-gray-600">
-                  2 hours ago by
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="hover:underline dark:text-violet-600"
-                  >
-                    Leroy Jenkins
-                  </a>
-                </p>
               </div>
               <div className="flex flex-col space-y-2">
                 <h3 className="flex items-center space-x-2 dark:text-gray-600">
                   <span className="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-600"></span>
                   <span className="text-xs font-bold tracking-wider uppercase">
-                    Exclusive
+                    Area
                   </span>
                 </h3>
                 <a
@@ -78,31 +69,21 @@ const EstateCard = ({ estate }) => {
                   href="#"
                   className="font-serif hover:underline"
                 >
-                  Nunc nec ipsum lobortis, pulvinar neque sed.
+                  {area}
                 </a>
-                <p className="text-xs dark:text-gray-600">
-                  4 hours ago by
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="hover:underline dark:text-violet-600"
-                  >
-                    Leroy Jenkins
-                  </a>
-                </p>
               </div>
             </div>
             <div className="flex flex-col w-full space-y-2">
               <div className="flex w-full h-1 bg-opacity-10 dark:bg-violet-600">
                 <div className="w-1/2 h-full dark:bg-violet-600"></div>
               </div>
-              <a
+              <Link
+                to={`/estateDetails/${id}`}
                 rel="noopener noreferrer"
-                href="#"
                 className="flex items-center justify-between w-full"
               >
-                <span className="text-xs font-bold tracking-wider uppercase">
-                  See more exclusives
+                <span className="text-xs font-bold  tracking-wider uppercase">
+                  View Property
                 </span>
                 <svg
                   viewBox="0 0 24 24"
@@ -115,7 +96,7 @@ const EstateCard = ({ estate }) => {
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="relative flex col-span-12 dark:bg-gray-500 bg-center bg-no-repeat bg-cover xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96">
@@ -138,7 +119,7 @@ const EstateCard = ({ estate }) => {
               </h1>
             </a>
           </div>
-          <div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
+          {/* <div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
             <div className="mb-8 space-x-5 border-b-2 border-opacity-10 dark:border-violet-600">
               <button
                 type="button"
@@ -259,7 +240,7 @@ const EstateCard = ({ estate }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
