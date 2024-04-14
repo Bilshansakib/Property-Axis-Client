@@ -6,22 +6,27 @@ const NavBar = () => {
   const { user, logOut } = useContext(AuthOfContext);
 
   const handleSignOut = () => {
-    logOut().then().catch();
+    logOut()
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
   };
   const Links = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
+      {user ? (
+        <li>
+          <NavLink to="/updateProfile">updateProfile</NavLink>
+        </li>
+      ) : (
+        <li>
+          <NavLink to="/register">Profile</NavLink>
+        </li>
+      )}
+      {/* <li>
         <NavLink to="/login">Home</NavLink>
-      </li>
+      </li> */}
     </>
   );
   return (
@@ -56,23 +61,22 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{Links}</ul>
       </div>
-      <div className="navbar-end">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn btn-ghost btn-circle avatar"
-        >
-          <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            />
-          </div>
-        </div>
+      <div className="navbar-end gap-2">
         {user ? (
-          <button onClick={handleSignOut} className="btn">
-            Sign Out
-          </button>
+          <>
+            <span>
+              <img
+                className="w-10 rounded-full"
+                src={
+                  user?.photoURL ||
+                  "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                }
+              />
+            </span>
+            <button onClick={handleSignOut} className="btn">
+              Logout
+            </button>
+          </>
         ) : (
           <Link to="/login">
             <button className="btn">Login</button>

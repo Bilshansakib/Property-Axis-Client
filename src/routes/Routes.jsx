@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "./../pages/Error/Error_page";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("/properties.json"),
+      },
+      {
+        path: "/updateProfile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
+        // loader: () => fetch("/properties.json"),
       },
       {
         path: "/login",

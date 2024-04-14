@@ -11,11 +11,13 @@ import app from "../Firebase/firebase.config";
 import PropTypes from "prop-types"; // ES6
 import { GoogleAuthProvider } from "firebase/auth";
 import toast from "react-hot-toast";
+import { GithubAuthProvider } from "firebase/auth/cordova";
 
 export const AuthOfContext = createContext(null);
 const auth = getAuth(app);
 // auth prov
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const AuthContext = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -40,7 +42,12 @@ const AuthContext = ({ children }) => {
   };
 
   const googleLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
+  };
+  const githubLogin = () => {
+    setLoading(true);
+    return signInWithPopup(auth, githubProvider);
   };
 
   useEffect(() => {
@@ -60,6 +67,7 @@ const AuthContext = ({ children }) => {
     signIn,
     logOut,
     googleLogin,
+    githubLogin,
   };
   return (
     <AuthOfContext.Provider value={authInformation}>

@@ -111,8 +111,9 @@ const Register = () => {
                   required
                   id="password"
                   placeholder="Password"
-                  className="w-full px-4 py-3 rounded-md  dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  className="w-full px-4 py-3 rounded-md  border-gray-300 bg-gray-50 text-gray-800 focus:dark:border-violet-600"
                 />
+
                 <span
                   onClick={() => setShowPass(!showPass)}
                   className="absolute top-4 right-2"
@@ -120,11 +121,11 @@ const Register = () => {
                   {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                 </span>
               </div>
-              <div className="flex justify-end text-xs text-gray-600">
+              {/* <div className="flex justify-end text-xs text-gray-600">
                 <a rel="noopener noreferrer" href="#">
                   Forgot Password?
                 </a>
-              </div>
+              </div> */}
               <div className="mb-2">
                 <input type="checkbox" name="terms" id="terms" />
                 <label className="ml-2 underline" htmlFor="terms">
@@ -157,11 +158,11 @@ const Register = () => {
             </button>
           </form>
           <div className="flex items-center pt-4 space-x-1">
-            <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
-            <p className="px-3 text-sm dark:text-gray-600">
+            <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
+            <p className="px-3 text-sm text-gray-600">
               Login with social accounts
             </p>
-            <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+            <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
           </div>
           <div className="flex justify-center space-x-4">
             <button aria-label="Log in with Google" className="p-3 rounded-sm">
