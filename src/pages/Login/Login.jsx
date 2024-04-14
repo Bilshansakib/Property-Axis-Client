@@ -1,3 +1,4 @@
+import toast, { Toaster } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import { useContext } from "react";

@@ -8,7 +8,6 @@ const NavBar = () => {
   const handleSignOut = () => {
     logOut().then().catch();
   };
-
   const Links = (
     <>
       <li>

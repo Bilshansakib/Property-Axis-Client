@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
-
+import toast, { Toaster } from "react-hot-toast";
 const Root = () => {
   return (
     <div className=" mx-auto max-w-9xl font-kanit">

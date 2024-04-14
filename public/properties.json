@@ -9,7 +9,10 @@
     "area": "5 acres",
     "location": "Green Valley, California",
     "facilities": ["living room", "swimming pool", "kitchen"],
-    "view_property_button": "https://example.com/properties/001"
+    "view_property_button": "https://example.com  / psroperties/001",
+    "comment": "Farms are versatile and can accommodate a wide range of agricultural activities.",
+    "image": "https://example.com/farms_image",
+    "rating": 4.6
   },
   {
     "estate_title": "Vineyard Estate",
@@ -21,7 +24,10 @@
     "area": "10 acres",
     "location": "Napa Valley, California",
     "facilities": ["tasting room", "cellar", "patio"],
-    "view_property_button": "https://example.com/properties/002"
+    "view_property_button": "https://example.com/properties/002",
+    "comment": "Vineyards are specialized in grape cultivation, often for wine production.",
+    "image": "https://example.com/vineyards_image",
+    "rating": 4.7
   },
   {
     "estate_title": "Ranch Retreat",
@@ -33,7 +39,10 @@
     "area": "300 acres",
     "location": "Big Sky, Montana",
     "facilities": ["barn", "riding trails", "guest house"],
-    "view_property_button": "https://example.com/properties/003"
+    "view_property_button": "https://example.com/properties/003",
+    "comment": "Ranches offer vast expanses of land suitable for livestock farming.",
+    "image": "https://example.com/ranches_image",
+    "rating": 4.8
   },
   {
     "estate_title": "Forest Cabin",
@@ -45,7 +54,10 @@
     "area": "1500 sq ft",
     "location": "Adirondack Mountains, New York",
     "facilities": ["fireplace", "deck", "hiking trails"],
-    "view_property_button": "https://example.com/properties/004"
+    "view_property_button": "https://example.com/properties/004",
+    "comment": "Forests are essential for biodiversity conservation and ecosystem services.",
+    "image": "https://example.com/forests_image",
+    "rating": 4.9
   },
   {
     "estate_title": "Sprawling Plantation Estate",
@@ -57,7 +69,10 @@
     "area": "50 acres",
     "location": "Charleston, South Carolina",
     "facilities": ["mansion", "orchard", "tennis court"],
-    "view_property_button": "https://example.com/properties/005"
+    "view_property_button": "https://example.com/properties/005",
+    "comment": "Plantations are large-scale agricultural estates typically focused on specific crops like tea, coffee, or rubber.",
+    "image": "https://example.com/plantations_image",
+    "rating": 4.7
   },
   {
     "estate_title": "Agricultural Land for Development",
@@ -69,7 +84,10 @@
     "area": "100 acres",
     "location": "Central Valley, California",
     "facilities": ["irrigation system", "fencing"],
-    "view_property_button": "https://example.com/properties/006"
+    "view_property_button": "https://example.com/properties/006",
+    "comment": "Agricultural land provides fertile ground for various crops.",
+    "image": "https://example.com/agricultural_land_image",
+    "rating": 4.5
   },
   {
     "estate_title": "Luxurious Farm Retreat",
@@ -81,6 +99,9 @@
     "area": "3000 sq ft",
     "location": "Catskill Mountains, New York",
     "facilities": ["pool house", "sauna", "organic garden"],
-    "view_property_button": "https://example.com/properties/007"
+    "view_property_button": "https://example.com/properties/007",
+    "comment": "Farms are versatile and can accommodate a wide range of agricultural activities.",
+    "image": "https://example.com/farms_image",
+    "rating": 4.6
   }
 ]

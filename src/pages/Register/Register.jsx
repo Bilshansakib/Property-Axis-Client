@@ -1,27 +1,53 @@
 import { Link } from "react-router-dom";
-import NavBar from "../../components/NavBar/NavBar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthOfContext } from "../../Providers/AuthContext";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
 const Register = () => {
+  const [regError, setRegError] = useState("");
+  const [regSuccess, setRegSuccess] = useState("");
+  const [showPass, setShowPass] = useState(false);
   const { createUser } = useContext(AuthOfContext);
   const handleRegister = (e) => {
     e.preventDefault();
+
     const form = new FormData(e.currentTarget);
 
     const name = form.get("username");
     const photo = form.get("photo");
     const email = form.get("email");
     const password = form.get("password");
+    const acceptTerms = e.target.terms.checked;
     console.log(name, photo, email, password);
+    // password validation
+    if (password.length < 6) {
+      setRegError("Password should be at least 6 charecters or longer");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setRegError("Must have an Uppercase letter in the password.");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setRegError("Must have a Lowercase letter in the password");
+      return;
+    } else if (!acceptTerms) {
+      setRegError("Please accept our terms and conditions!");
+      return;
+    }
+
+    setRegError("");
+    setRegSuccess("");
 
     // user
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        setRegSuccess("Registration Completed");
+        toast.success("Successfully toasted!");
       })
       .catch((error) => {
         console.log(error);
+        setRegError(error.message);
+        toast.error("This didn't work.");
       });
   };
   return (
@@ -36,7 +62,7 @@ const Register = () => {
             className="space-y-6"
           >
             <div className="space-y-1 text-sm">
-              <label htmlFor="username" className="block dark:text-gray-600">
+              <label htmlFor="username" className="block text-gray-600">
                 Username
               </label>
               <input
@@ -45,11 +71,11 @@ const Register = () => {
                 required
                 id="username"
                 placeholder="Username"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-500 text-gray-800 focus:border-violet-600"
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="PhotoURL" className="block dark:text-gray-600">
+              <label htmlFor="PhotoURL" className="block text-gray-600">
                 Photo URL
               </label>
               <input
@@ -78,21 +104,55 @@ const Register = () => {
               <label htmlFor="password" className="block text-gray-600">
                 Password
               </label>
-              <input
-                type="password"
-                name="password"
-                required
-                id="password"
-                placeholder="Password"
-                className="w-full px-4 py-3 rounded-md  dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
-              />
+              <div className=" items-center relative ">
+                <input
+                  type={showPass ? "text" : "password"}
+                  name="password"
+                  required
+                  id="password"
+                  placeholder="Password"
+                  className="w-full px-4 py-3 rounded-md  dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                />
+                <span
+                  onClick={() => setShowPass(!showPass)}
+                  className="absolute top-4 right-2"
+                >
+                  {showPass ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                </span>
+              </div>
               <div className="flex justify-end text-xs text-gray-600">
                 <a rel="noopener noreferrer" href="#">
                   Forgot Password?
                 </a>
               </div>
+              <div className="mb-2">
+                <input type="checkbox" name="terms" id="terms" />
+                <label className="ml-2 underline" htmlFor="terms">
+                  Terms and Conditions
+                </label>
+              </div>
             </div>
-            <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">
+
+            {regError && <p className="text-red-700">{regError}</p>}
+            {regSuccess && (
+              <div>
+                <span>
+                  <p className="text-green-700">{regSuccess}</p>
+                </span>
+                <span>
+                  <Link to="/">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="underline font-semibold ml-1 text-violet-600 "
+                    >
+                      Go Home To Explore
+                    </a>
+                  </Link>
+                </span>
+              </div>
+            )}
+            <button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-violet-600">
               Sign in
             </button>
           </form>
@@ -132,13 +192,13 @@ const Register = () => {
               </svg>
             </button>
           </div>
-          <p className="text-xs  text-center sm:px-6 dark:text-gray-600">
+          <p className="text-xs  text-center sm:px-6 text-gray-600">
             Already have an account?
             <Link to="/login">
               <a
                 rel="noopener noreferrer"
                 href="#"
-                className="underline font-semibold ml-1 text-red-400 dark:text-gray-800"
+                className="underline font-semibold ml-1 text-red-400"
               >
                 Login
               </a>

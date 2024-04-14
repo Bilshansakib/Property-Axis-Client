@@ -1,6 +1,6 @@
 import { useParams, useLoaderData } from "react-router-dom";
 import { GiFarmer } from "react-icons/gi";
-const EstateDetails = ({ estate }) => {
+const EstateDetails = () => {
   const estated = useLoaderData();
   const { id } = useParams();
   const data = estated.find((data) => data.id == id);
@@ -19,12 +19,12 @@ const EstateDetails = ({ estate }) => {
 
   return (
     <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
-      <article className="space-y-8 dark:bg-gray-100 dark:text-gray-900">
+      <article className="space-y-8 bg-gray-100 text-gray-900">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">
             {estate_title}
           </h1>
-          <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-600">
+          <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
             <div className="flex items-center md:space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,12 +44,12 @@ const EstateDetails = ({ estate }) => {
               </p>
             </div>
             <p className="flex-shrink-0 gap-1 mt-3 text-sm md:mt-0 flex items-center">
-              <GiFarmer /> Segment •
+              <GiFarmer size={20} /> Segment •
               <p className="font-semibold"> {segment_name}</p>
             </p>
           </div>
         </div>
-        <div className="dark:text-gray-800">
+        <div className="text-gray-800">
           <p>{description}</p>
         </div>
         <div className="font-semibold text-2xl">
@@ -57,11 +57,11 @@ const EstateDetails = ({ estate }) => {
         </div>
       </article>
       <div>
-        <div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
+        <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-600">
           <a
             rel="noopener noreferrer"
             href="#"
-            className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
+            className="px-3 py-1 rounded-sm hover:underline bg-violet-600 text-gray-50"
           >
             <span>Current status :</span>
             <span className="font-semibold ml-4">{status}</span>
@@ -69,7 +69,7 @@ const EstateDetails = ({ estate }) => {
           <a
             rel="noopener noreferrer"
             href="#"
-            className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"
+            className="px-3 py-1 rounded-sm hover:underline bg-violet-600 text-gray-50"
           >
             <span>Total Area :</span>
             <span className="font-semibold ml-4">{area}</span>
