@@ -4,7 +4,6 @@ import { Navigate, useLocation } from "react-router-dom";
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthOfContext);
   const location = useLocation();
-  console.log(location);
   if (loading) {
     return (
       <div className=" items-center py-4  rounded shadow-md w-60 sm:w-80 animate-pulse bg-gray-50">

@@ -5,13 +5,15 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.config";
-import PropTypes from "prop-types"; // ES6
+import PropTypes from "prop-types";
 import { GoogleAuthProvider } from "firebase/auth";
 import toast from "react-hot-toast";
-import { GithubAuthProvider } from "firebase/auth/cordova";
+import { GithubAuthProvider } from "firebase/auth";
+import UpdateProfile from "./../pages/UpdateProfile/UpdateProfile";
 
 export const AuthOfContext = createContext(null);
 const auth = getAuth(app);
@@ -27,6 +29,13 @@ const AuthContext = ({ children }) => {
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+  // update
+  const UpdateUserProfile = (name, image) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: image,
+    });
   };
 
   const signIn = (email, password) => {
@@ -68,6 +77,7 @@ const AuthContext = ({ children }) => {
     logOut,
     googleLogin,
     githubLogin,
+    UpdateUserProfile,
   };
   return (
     <AuthOfContext.Provider value={authInformation}>

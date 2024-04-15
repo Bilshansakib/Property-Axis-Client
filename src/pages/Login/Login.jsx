@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialMediaLogin from "../../components/SocialMediaLogin/SocialMediaLogin";
 
 const Login = () => {
-  const { signIn, googleLogin } = useContext(AuthOfContext);
+  const { signIn } = useContext(AuthOfContext);
   const location = useLocation();
   const navigate = useNavigate();
   console.log("thi is", location);
@@ -111,7 +111,6 @@ const Login = () => {
                     <Link to="/">
                       <a
                         rel="noopener noreferrer"
-                        href="#"
                         className="underline font-semibold ml-1 text-violet-600 "
                       >
                         Go Home To Explore

@@ -21,7 +21,7 @@ const NavBar = () => {
         </li>
       ) : (
         <li>
-          <NavLink to="/register">Profile</NavLink>
+          <NavLink to="/register">Create Profile</NavLink>
         </li>
       )}
       {/* <li>
