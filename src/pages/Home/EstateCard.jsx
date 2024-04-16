@@ -18,7 +18,7 @@ const EstateCard = ({ estate }) => {
 
   return (
     <div>
-      <section className="px-5 py-10 bg-gray-100 text-gray-800">
+      <section className="px-5 py-10 bg-[url('/image/banner.jpg')] text-gray-800">
         <div className="container grid grid-cols-12 mx-auto gap-y-6 md:gap-10">
           <div className="flex flex-col justify-between col-span-12 py-2 space-y-8 md:space-y-16 md:col-span-3">
             <div className="flex flex-col space-y-8 md:space-y-12">
@@ -86,7 +86,7 @@ const EstateCard = ({ estate }) => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-between w-full"
               >
-                <span className="text-xs font-bold  tracking-wider uppercase">
+                <span className="text-2xl text-blue-500 font-bold  tracking-wider uppercase">
                   View Property
                 </span>
                 <svg
@@ -103,25 +103,32 @@ const EstateCard = ({ estate }) => {
               </Link>
             </div>
           </div>
-          <div className="relative flex col-span-12 bg-gray-500 bg-center bg-no-repeat bg-cover xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96">
-            <span className="absolute px-1 pb-2 text-xs font-bold uppercase border-b-2 left-6 top-6 text-gray-800 border-violet-600">
-              {location}
-            </span>
-            <a className="flex flex-col items-center justify-end p-6 text-center sm:p-8 group dark:via- flex-grow-1 bg-gradient-to-b from-gray-50 to-gray-50">
-              <span className="flex items-center mb-4 space-x-2 text-violet-600">
-                <span className="relative flex-shrink-0 w-2 h-2 rounded-full bg-violet-600">
-                  <span className="absolute flex-shrink-0 w-3 h-3 rounded-full -left-1 -top-1 animate-ping bg-violet-600"></span>
+          <div
+            style={{ backgroundImage: `url(${image})` }}
+            className="relative flex col-span-12 bg-center bg-no-repeat bg-cover  xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96"
+          >
+            {/* <img src={image} /> */}
+            <div className="  absolute w-full ">
+              <div className="flex flex-col items-center justify-between gap-10 space-y-20 p-6 text-center sm:p-8 group dark:via- flex-grow-1 ">
+                <span className=" px-1 pb-2 text-xs font-bold uppercase border-b-2 left-6 top-6 text-violet-800 border-violet-600">
+                  {location}
                 </span>
-                <span className="text-sm font-bold">Live</span>
-              </span>
-              <h1
-                rel="noopener noreferrer"
-                href="#"
-                className="font-serif text-2xl font-semibold group-hover:underline text-gray-800"
-              >
-                {estate_title}
-              </h1>
-            </a>
+                <span className="flex items-center mb-4 space-x-2 text-violet-600">
+                  <span className="relative flex-shrink-0 w-2 h-2 rounded-full bg-violet-600">
+                    <span className="absolute flex-shrink-0 w-3 h-3 rounded-full -left-1 -top-1 animate-ping bg-violet-600"></span>
+                  </span>
+                  <span className="text-sm font-bold">Live</span>
+                </span>
+
+                <h1
+                  rel="noopener noreferrer"
+                  href="#"
+                  className="font-serif text-2xl font-semibold group-hover:underline text-white"
+                >
+                  {estate_title}
+                </h1>
+              </div>
+            </div>
           </div>
           <div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
             <div className="mb-8 space-x-5 border-b-2 border-opacity-10 border-violet-600">
@@ -250,7 +257,7 @@ const EstateCard = ({ estate }) => {
           </div>
         </div>
       </section>
-      <div className="divider bg-violet-600"></div>
+      <div className="divider rounded-full bg-blue-600"></div>
     </div>
   );
 };

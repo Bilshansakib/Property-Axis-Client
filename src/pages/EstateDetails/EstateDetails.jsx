@@ -1,5 +1,6 @@
 import { useParams, useLoaderData } from "react-router-dom";
 import { GiFarmer } from "react-icons/gi";
+import "animate.css";
 const EstateDetails = () => {
   const estated = useLoaderData();
   const { id } = useParams();
@@ -19,8 +20,8 @@ const EstateDetails = () => {
   } = data;
 
   return (
-    <div className="bg-[url('/')] max-w-2xl px-6 py-16 mx-auto space-y-12">
-      <article className="space-y-8 bg-violet-400 p-4 rounded-lg text-gray-900">
+    <div className="bg-[url('/image/privateLand.jpg')] max-w-6xl px-6 py-16 mx-auto space-y-12">
+      <article className="animate__animated animate__bounce space-y-8 p-4 rounded-lg text-gray-900">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">
             {estate_title}
@@ -53,8 +54,12 @@ const EstateDetails = () => {
         <div className="text-gray-800">
           <p>{description}</p>
         </div>
-        <div className="font-semibold text-2xl">
+        <div className="font-semibold text-2xl flex hover:animate-bounce duration-1">
           <p>Price • {price}</p>
+          {/* <img
+            className="mt-4 opacity-90 rounded-xl h-96 object-cover"
+            src={image}
+          /> */}
         </div>
       </article>
       <div>

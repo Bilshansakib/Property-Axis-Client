@@ -11,10 +11,7 @@ const Aside = () => {
   }, []);
   return (
     <>
-      <h2>hi</h2>
-      <div className="h-96 w-52 border-6">
-        <Map></Map>
-      </div>
+      <div className="h-96 w-52 border-6"></div>
       <div>
         {/* <Map></Map> */}
         <h2 className="text-2xl">All categories</h2>

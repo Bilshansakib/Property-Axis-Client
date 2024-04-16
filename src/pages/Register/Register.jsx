@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthOfContext } from "../../Providers/AuthContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 const Register = () => {
   const [regError, setRegError] = useState("");
   const [regSuccess, setRegSuccess] = useState("");
@@ -207,6 +207,7 @@ const Register = () => {
           </p>
         </div>
       </div>
+      <Toaster></Toaster>
     </div>
   );
 };
