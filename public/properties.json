@@ -11,7 +11,7 @@
     "facilities": ["living room", "swimming pool", "kitchen"],
     "view_property_button": "https://example.com  / psroperties/001",
     "comment": "Farms are versatile and can accommodate a wide range of agricultural activities.",
-    "image": "https://example.com/farms_image",
+    "image": "https://i.ibb.co/zPJ3ggJ/r-architecture-MAn-Vo-Jl-QUvg-unsplash.jpg",
     "rating": 4.6
   },
   {
@@ -26,7 +26,7 @@
     "facilities": ["tasting room", "cellar", "patio"],
     "view_property_button": "https://example.com/properties/002",
     "comment": "Vineyards are specialized in grape cultivation, often for wine production.",
-    "image": "https://example.com/vineyards_image",
+    "image": "https://i.ibb.co/6XtQJ88/joshua-sukoff-Xq0-OGd-BQLmg-unsplash.jpg",
     "rating": 4.7
   },
   {
@@ -41,7 +41,7 @@
     "facilities": ["barn", "riding trails", "guest house"],
     "view_property_button": "https://example.com/properties/003",
     "comment": "Ranches offer vast expanses of land suitable for livestock farming.",
-    "image": "https://example.com/ranches_image",
+    "image": "https://i.ibb.co/kSfX2cw/asa-rodger-Ry-Z5-Xjv-YKyc-unsplash.jpg",
     "rating": 4.8
   },
   {
@@ -56,7 +56,7 @@
     "facilities": ["fireplace", "deck", "hiking trails"],
     "view_property_button": "https://example.com/properties/004",
     "comment": "Forests are essential for biodiversity conservation and ecosystem services.",
-    "image": "https://example.com/forests_image",
+    "image": "https://i.ibb.co/0JWchPc/nathan-dumlao-d82-Baz-Kb-KFw-unsplash.jpg",
     "rating": 4.9
   },
   {
@@ -71,7 +71,7 @@
     "facilities": ["mansion", "orchard", "tennis court"],
     "view_property_button": "https://example.com/properties/005",
     "comment": "Plantations are large-scale agricultural estates typically focused on specific crops like tea, coffee, or rubber.",
-    "image": "https://example.com/plantations_image",
+    "image": "https://i.ibb.co/jMs3LHk/vainyard.jpg",
     "rating": 4.7
   },
   {
@@ -86,7 +86,7 @@
     "facilities": ["irrigation system", "fencing"],
     "view_property_button": "https://example.com/properties/006",
     "comment": "Agricultural land provides fertile ground for various crops.",
-    "image": "https://example.com/agricultural_land_image",
+    "image": "https://i.ibb.co/1Tnw3vS/argricalture-land.jpg",
     "rating": 4.5
   },
   {
@@ -101,7 +101,7 @@
     "facilities": ["pool house", "sauna", "organic garden"],
     "view_property_button": "https://example.com/properties/007",
     "comment": "Farms are versatile and can accommodate a wide range of agricultural activities.",
-    "image": "https://example.com/farms_image",
+    "image": "https://i.ibb.co/Ch06NxC/nathan-anderson-rjw0-C4-Kl-NSo-unsplash.jpg",
     "rating": 4.6
   }
 ]

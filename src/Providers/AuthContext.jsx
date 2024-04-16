@@ -32,7 +32,7 @@ const AuthContext = ({ children }) => {
   };
   // update
   const UpdateUserProfile = (name, image) => {
-    updateProfile(auth.currentUser, {
+    return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: image,
     });

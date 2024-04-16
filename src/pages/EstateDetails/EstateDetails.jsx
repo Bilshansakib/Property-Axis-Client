@@ -7,6 +7,7 @@ const EstateDetails = () => {
   console.log(data);
 
   const {
+    image,
     estate_title,
     segment_name,
     description,
@@ -18,8 +19,8 @@ const EstateDetails = () => {
   } = data;
 
   return (
-    <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
-      <article className="space-y-8 bg-gray-100 text-gray-900">
+    <div className="bg-[url('/')] max-w-2xl px-6 py-16 mx-auto space-y-12">
+      <article className="space-y-8 bg-violet-400 p-4 rounded-lg text-gray-900">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">
             {estate_title}
