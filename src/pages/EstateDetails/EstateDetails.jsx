@@ -23,10 +23,18 @@ const EstateDetails = () => {
     <div className="bg-[url('/image/privateLand.jpg')] max-w-6xl px-6 py-16 mx-auto space-y-12">
       <article className="animate__animated animate__bounce space-y-8 p-4 rounded-lg text-gray-900">
         <div className="space-y-6">
-          <h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">
+          <h1
+            data-aos="slide-left"
+            data-aos-duration="1000"
+            className="text-4xl font-bold md:tracking-tight md:text-5xl"
+          >
             {estate_title}
           </h1>
-          <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
+          <div
+            data-aos="slide-right"
+            data-aos-duration="1000"
+            className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600"
+          >
             <div className="flex items-center md:space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,13 +53,21 @@ const EstateDetails = () => {
                 Location • <p className="font-semibold"> {location}</p>
               </p>
             </div>
-            <p className="flex-shrink-0 gap-1 mt-3 text-sm md:mt-0 flex items-center">
+            <p
+              data-aos="slide-left"
+              data-aos-duration="1000"
+              className="flex-shrink-0 gap-1 mt-3 text-sm md:mt-0 flex items-center"
+            >
               <GiFarmer size={20} /> Segment •
               <p className="font-semibold"> {segment_name}</p>
             </p>
           </div>
         </div>
-        <div className="text-gray-800">
+        <div
+          data-aos="slide-right"
+          data-aos-duration="1000"
+          className="text-gray-800"
+        >
           <p>{description}</p>
         </div>
         <div className="font-semibold text-2xl flex hover:animate-bounce duration-1">
@@ -100,6 +116,13 @@ const EstateDetails = () => {
               </a>
             </li>
           </ul>
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          className="my-4 object-cover max-h-svh shadow-2xl"
+        >
+          <img src={image} />
         </div>
       </div>
     </div>

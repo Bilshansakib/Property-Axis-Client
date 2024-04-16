@@ -11,10 +11,9 @@ const Aside = () => {
   }, []);
   return (
     <>
-      <div className="h-96 w-52 border-6"></div>
-      <div>
+      <div className="mt-4 text-blue-400">
         {/* <Map></Map> */}
-        <h2 className="text-2xl">All categories</h2>
+        <h2 className="text-2xl gap-4 ">All categories</h2>
         {categories.map((category) => (
           <NavLink
             key={category.id}
