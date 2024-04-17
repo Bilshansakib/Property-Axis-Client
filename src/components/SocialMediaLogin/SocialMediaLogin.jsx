@@ -25,6 +25,15 @@ const SocialMediaLogin = () => {
       })
       .catch();
   };
+  const handleXSign = () => {
+    XLogin()
+      .then((result) => {
+        if (result.user) {
+          navigate(from);
+        }
+      })
+      .catch();
+  };
   return (
     <div className="flex justify-center space-x-4">
       <button
