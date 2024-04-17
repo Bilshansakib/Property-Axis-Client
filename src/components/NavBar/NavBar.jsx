@@ -56,7 +56,9 @@ const NavBar = () => {
             {Links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl">Property Axis</a>
+        <Link to="/">
+          <a className="btn btn-ghost text-white text-2xl">Property Axis</a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{Links}</ul>
@@ -79,7 +81,7 @@ const NavBar = () => {
           </>
         ) : (
           <Link to="/login">
-            <button className="btn">Login</button>
+            <button className="btn btn-ghost text-2xl text-white">Login</button>
           </Link>
         )}
       </div>

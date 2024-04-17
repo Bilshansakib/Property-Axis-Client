@@ -2,6 +2,7 @@ import { Navigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 import { data } from "autoprefixer";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
   const { user, createUser, updateUserProfile } = useAuth();
@@ -33,6 +34,9 @@ const UpdateProfile = () => {
 
   return (
     <>
+      <Helmet>
+        <title>P-Axis | Profile</title>
+      </Helmet>
       <div className="p-6 sm:p-12 bg-gray-50 text-gray-800">
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <img

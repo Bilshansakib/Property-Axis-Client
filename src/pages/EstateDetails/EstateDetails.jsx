@@ -1,6 +1,7 @@
 import { useParams, useLoaderData } from "react-router-dom";
 import { GiFarmer } from "react-icons/gi";
 import "animate.css";
+import { Helmet } from "react-helmet-async";
 const EstateDetails = () => {
   const estated = useLoaderData();
   const { id } = useParams();
@@ -125,6 +126,9 @@ const EstateDetails = () => {
           <img src={image} />
         </div>
       </div>
+      <Helmet>
+        <title>Estate Details : 0{id}</title>
+      </Helmet>
     </div>
   );
 };

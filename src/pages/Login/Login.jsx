@@ -4,6 +4,7 @@ import { AuthOfContext } from "../../Providers/AuthContext";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialMediaLogin from "../../components/SocialMediaLogin/SocialMediaLogin";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signIn } = useContext(AuthOfContext);
@@ -50,9 +51,9 @@ const Login = () => {
   //   googleLogin().then().catch();
   // };
   return (
-    <div>
-      <div className="text-center">
-        <div className="w-1/2 mx-auto p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
+    <div className="bg-[url('/image/tractor.jpg')] ">
+      <div className="text-center ">
+        <div className=" w-1/2 shadow-lg mx-auto p-8 space-y-3 rounded-xl  text-gray-800">
           <h1 className="text-2xl font-bold text-center">Login</h1>
           <form
             onSubmit={handleLogin}
@@ -70,7 +71,7 @@ const Login = () => {
                 required
                 id="email"
                 placeholder="email"
-                className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600"
+                className="w-full px-4 py-3 rounded-md border-gray-300  text-gray-800 focus:border-violet-600"
               />
             </div>
             <div className="space-y-1 text-sm">
@@ -141,8 +142,9 @@ const Login = () => {
             <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
           </div>
 
-          <SocialMediaLogin></SocialMediaLogin>
-
+          <div className="">
+            <SocialMediaLogin></SocialMediaLogin>
+          </div>
           {/* <div className="flex justify-center space-x-4">
           <button
               onClick={handleGoogleSign}
@@ -176,13 +178,13 @@ const Login = () => {
               </svg>
             </button>
           </div> */}
-          <p className="text-xs  text-center sm:px-6 dark:text-gray-600">
+          <p className="text-sm bg-white rounded-lg py-2  text-center sm:px-6 dark:text-gray-600">
             Don't have an account?
             <Link to="/register">
               <a
                 rel="noopener noreferrer"
                 href="#"
-                className="underline font-semibold ml-1 text-red-400 dark:text-gray-800"
+                className="underline font-semibold ml-1 text-red-500 dark:text-gray-800"
               >
                 Register/Sign up
               </a>
@@ -190,6 +192,9 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <Helmet>
+        <title>P-Axis | Login</title>
+      </Helmet>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { AuthOfContext } from "../../Providers/AuthContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import SocialMediaLogin from "../../components/SocialMediaLogin/SocialMediaLogin";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
   const [regError, setRegError] = useState("");
   const [regSuccess, setRegSuccess] = useState("");
@@ -52,9 +53,9 @@ const Register = () => {
       });
   };
   return (
-    <div>
+    <div className="bg-[url('/image/banner.jpg')] bg-top">
       <div className="text-center">
-        <div className="w-1/2 mx-auto p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
+        <div className="w-1/2 mx-auto p-8 space-y-3 rounded-xl shadow-lg text-gray-800">
           <h1 className="text-2xl font-bold text-center">Register</h1>
           <form
             onSubmit={handleRegister}
@@ -72,7 +73,7 @@ const Register = () => {
                 required
                 id="username"
                 placeholder="Username"
-                className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-500 text-gray-800 focus:border-violet-600"
+                className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600"
               />
             </div>
             <div className="space-y-1 text-sm">
@@ -85,7 +86,7 @@ const Register = () => {
                 required
                 id="PhotoURL"
                 placeholder="Photo URL"
-                className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                className="w-full px-4 py-3 rounded-md dark:border-gray-300  dark:text-gray-800 focus:dark:border-violet-600"
               />
             </div>
             <div className="space-y-1 text-sm">
@@ -195,13 +196,13 @@ const Register = () => {
               </svg>
             </button>
           </div> */}
-          <p className="text-xs  text-center sm:px-6 text-gray-600">
+          <p className="text-sm bg-white rounded-lg py-2  text-center sm:px-6 text-gray-600">
             Already have an account?
             <Link to="/login">
               <a
                 rel="noopener noreferrer"
                 href="#"
-                className="underline font-semibold ml-1 text-red-400"
+                className="underline font-semibold ml-1 text-red-600"
               >
                 Login
               </a>
@@ -209,6 +210,9 @@ const Register = () => {
           </p>
         </div>
       </div>
+      <Helmet>
+        <title>P-Axis | Register</title>
+      </Helmet>
       <Toaster></Toaster>
     </div>
   );
