@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Map from "../Map/Map";
+import Stats from "../Stats/Stats";
+import AsideImage from "./../AsideImage/AsideImage";
 
 const Aside = () => {
   const [categories, setCategories] = useState([]);
@@ -11,8 +13,7 @@ const Aside = () => {
   }, []);
   return (
     <>
-      <div className="mt-4 space-y-12 p-6 rounded-xl bg-[url('/image/banner.jpg')]">
-        {/* <Map></Map> */}
+      <div className="mt-4 space-y-12 p-6 rounded-t-xl bg-[url('/image/banner.jpg')]">
         <h2 className="text-3xl gap-4 ">All categories</h2>
         {categories.map((category) => (
           <NavLink
@@ -23,7 +24,15 @@ const Aside = () => {
             {category.name}
           </NavLink>
         ))}
-        <Map></Map>
+        <div className=" rounded-xl">
+          <Map></Map>
+        </div>
+        <div className="text-center">
+          <Stats></Stats>
+        </div>
+      </div>
+      <div>
+        <AsideImage></AsideImage>
       </div>
     </>
   );
