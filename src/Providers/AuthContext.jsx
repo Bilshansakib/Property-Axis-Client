@@ -1,4 +1,5 @@
 import {
+  TwitterAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
@@ -20,6 +21,7 @@ const auth = getAuth(app);
 // auth prov
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
+const XProvider = new TwitterAuthProvider();
 
 const AuthContext = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -58,6 +60,10 @@ const AuthContext = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, githubProvider);
   };
+  const XLogin = () => {
+    setLoading(true);
+    return signInWithPopup(auth, XProvider);
+  };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -77,6 +83,7 @@ const AuthContext = ({ children }) => {
     logOut,
     googleLogin,
     githubLogin,
+    XLogin,
     UpdateUserProfile,
   };
   return (
