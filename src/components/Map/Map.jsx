@@ -1,20 +1,30 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import GoogleMapReact from "google-map-react";
+import { googleAPIKey } from "../../googleAPIKey";
+import { ImLocation2 } from "react-icons/im";
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const Map = () => {
-  const position = [36.7783, -119.4179]; // California coordinates
-
+  const markerPosition = {
+    lat: 40.7128,
+    lng: -74.006,
+  };
+  const defaultProps = {
+    center: {
+      lat: 40.7128,
+      lng: -74.006,
+    },
+    zoom: 11,
+  };
   return (
-    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={[51.505, -0.09]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
-    </MapContainer>
+    <div style={{ height: "100vh", width: "100%" }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: googleAPIKey }}
+        defaultCenter={defaultProps.center}
+        defaultZoom={defaultProps.zoom}
+      >
+        <AnyReactComponent position={markerPosition} text={<ImLocation2 />} />
+      </GoogleMapReact>
+    </div>
   );
 };
 

@@ -11,9 +11,9 @@ const Aside = () => {
   }, []);
   return (
     <>
-      <div className="mt-4 text-blue-400">
+      <div className="mt-4 space-y-12 p-6 rounded-xl bg-[url('/image/banner.jpg')]">
         {/* <Map></Map> */}
-        <h2 className="text-2xl gap-4 ">All categories</h2>
+        <h2 className="text-3xl gap-4 ">All categories</h2>
         {categories.map((category) => (
           <NavLink
             key={category.id}
@@ -23,6 +23,7 @@ const Aside = () => {
             {category.name}
           </NavLink>
         ))}
+        <Map></Map>
       </div>
     </>
   );
