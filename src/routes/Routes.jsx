@@ -7,6 +7,7 @@ import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "./../pages/Error/Error_page";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
+import PrivateInvertors from "../pages/PrivateInvertors/PrivateInvertors";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,15 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
+        // loader: () => fetch("/properties.json"),
+      },
+      {
+        path: "/privateInvertors",
+        element: (
+          <PrivateRoute>
+            <PrivateInvertors></PrivateInvertors>
           </PrivateRoute>
         ),
         // loader: () => fetch("/properties.json"),

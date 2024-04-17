@@ -16,9 +16,14 @@ const NavBar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       {user ? (
-        <li>
-          <NavLink to="/updateProfile">update Profile</NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink to="/updateProfile">update Profile</NavLink>
+          </li>
+          <li>
+            <NavLink to="/privateInvertors">Private Investors</NavLink>
+          </li>
+        </>
       ) : (
         <li>
           <NavLink to="/register">Create Profile</NavLink>
