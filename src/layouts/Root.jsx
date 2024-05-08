@@ -6,10 +6,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
 
 const Root = () => {
   return (

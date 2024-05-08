@@ -14,7 +14,7 @@ const Home = () => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <div data-aos="fade-up" data-aos-duration="1000" className="col-span-3">
           {estate.map((oneEstate) => (
-            <EstateCard key={oneEstate.id} estate={oneEstate}></EstateCard>
+            <EstateCard key={oneEstate._id} estate={oneEstate}></EstateCard>
           ))}
         </div>
         <div>

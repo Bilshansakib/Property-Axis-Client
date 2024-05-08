@@ -23,6 +23,9 @@ const NavBar = () => {
           <li>
             <NavLink to="/privateInvertors">Private Investors</NavLink>
           </li>
+          <li>
+            <NavLink to="/bookings">My Bookings</NavLink>
+          </li>
         </>
       ) : (
         <li>

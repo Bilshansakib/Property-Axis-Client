@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
 const EstateCard = ({ estate }) => {
   const {
-    id,
+    _id,
     rating,
     comment,
     image,
@@ -82,7 +82,7 @@ const EstateCard = ({ estate }) => {
                 <div className="w-1/2 h-full bg-violet-600"></div>
               </div>
               <Link
-                to={`/estateDetails/${id}`}
+                to={`/estateDetails/${_id}`}
                 rel="noopener noreferrer"
                 className="flex items-center justify-between w-full"
               >

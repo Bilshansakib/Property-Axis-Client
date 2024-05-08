@@ -8,6 +8,8 @@ import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "./../pages/Error/Error_page";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import PrivateInvertors from "../pages/PrivateInvertors/PrivateInvertors";
+import BookingForm from "../components/BookingForm/BookingForm";
+import Bookings from "../components/Bookings/Bookings";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("/properties.json"),
+        loader: () => fetch("http://localhost:5000/property"),
       },
       {
         path: "/estateDetails/:id",
@@ -27,7 +29,25 @@ const router = createBrowserRouter([
             <EstateDetails></EstateDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("/properties.json"),
+        loader: () => fetch(`http://localhost:5000/property`),
+      },
+      {
+        path: "/booking/:id",
+        element: (
+          <PrivateRoute>
+            <BookingForm></BookingForm>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/booking/${params.id}`),
+      },
+      {
+        path: "bookings",
+        element: (
+          <PrivateRoute>
+            <Bookings></Bookings>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/updateProfile",

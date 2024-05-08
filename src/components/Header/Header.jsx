@@ -12,7 +12,7 @@ const Header = () => {
         data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        className="absolute bottom-2 mt-24 left-5 text-5xl font-semibold text-white "
+        className="absolute transform  bottom-2 mt-24 left-5 text-5xl font-semibold text-white "
       >
         Property <span className="text-violet-600 md:text-blue-600">Axis</span>{" "}
         Invest
